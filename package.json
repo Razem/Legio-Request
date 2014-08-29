@@ -1,26 +1,35 @@
 {
   "name": "legio-request",
   "version": "0.0.1",
-  "description": "A library for an easy work with AJAX requests",
+  "description": "A library for an easy work with AJAX and script requests.",
   "author": {
     "name": "Radomír Žemlička",
     "email": "info@razem.cz",
     "url": "http://razem.cz"
   },
-  "licence": "LGPL",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "https://github.com/RadekCZ/Legio-Request.git"
   },
   "main": "./index",
   "browser": {
-    "xmlhttprequest": "./lib/xmlhttprequest"
+    "xmlhttprequest": "./lib/browser/xmlhttprequest"
   },
   "bin": {},
   "dependencies": {
-    "legio": "0.3.x",
-    "legio-async": "0.0.x",
-    "xmlhttprequest": "1.6.0"
+    "legio": "~0.3.0",
+    "legio-async": "~0.0.1",
+    "xmlhttprequest": "~1.6.0"
+  },
+  "devDependencies": {
+    "mocha": "~1.21.4",
+    "expect.js": "~0.3.1"
+  },
+  "scripts": {
+    "test": "mocha test/index",
+    "browserify-test": "browserify test/browser.js -o test/browser.bundle.js --noparse=expect.js",
+    "browser-test2": "browserify test/browser.js -o test/browser.bundle.js --dg false --igv __filename,__dirname,global"
   },
   "engines": {
     "node": "*"
