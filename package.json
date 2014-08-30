@@ -1,7 +1,7 @@
 {
   "name": "legio-request",
-  "version": "0.0.1",
-  "description": "A library for an easy work with AJAX and script requests.",
+  "version": "0.0.2",
+  "description": "A library for an easy work with AJAX and script loading.",
   "author": {
     "name": "Radomír Žemlička",
     "email": "info@razem.cz",
@@ -28,8 +28,7 @@
   },
   "scripts": {
     "test": "mocha test/index",
-    "browserify-test": "browserify test/browser.js -o test/browser.bundle.js --noparse=expect.js",
-    "browser-test2": "browserify test/browser.js -o test/browser.bundle.js --dg false --igv __filename,__dirname,global"
+    "browserify-test": "browserify test/browser.js -o test/browser.bundle.js --noparse=expect.js"
   },
   "engines": {
     "node": "*"

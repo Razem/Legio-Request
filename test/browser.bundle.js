@@ -241,7 +241,12 @@ if (window && window.document) {
     promise = new Promise();
 
     global[callbackId] = function (data) {
-      delete global[callbackId];
+      try {
+        delete global[callbackId];
+      }
+      catch (err) {
+        global[callbackId] = undefined;
+      }
 
       promise.fulfill(data);
     };
